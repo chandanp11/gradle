@@ -15,4 +15,30 @@ task firstTask{
         println 'doLast'
     }
 }
+
+task deployToStage{
+    println "Configuring Deployed to staging"
+    doLast(){
+        println "deployed to staging"
+    }
+}
+
+task deployToProduction{
+    println "Configuring Deployed to production"
+    doLast(){
+        println "deployed to production"
+    }
+}
+
+task cleanUpFiles{
+    doLast(){
+        println "Files cleaned up"
+    }
+}
+
+deployToProduction.dependsOn deployToStage
+deployToProduction.finalizedBy cleanUpFiles
+
+defaultTasks "deployToStage"
+
 println 'end'

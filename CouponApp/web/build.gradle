@@ -1,0 +1,22 @@
+plugins {
+    id 'war'
+    id 'org.gretty' version "4.1.5"
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: '6.1.0'
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.17.2'
+
+    testImplementation 'junit:junit:4.4'
+    testImplementation 'org.mockito:mockito-core:3.5.9'
+}
+
+gretty.httpPort=8082

@@ -10,7 +10,22 @@ plugins {
     id 'application'
 }
 
+project.description = "First Java Project"
+project.version = 1.0
+project.ext.customProperty1 = "ABC"
+
 repositories {
+    println project.name
+    println project.description
+    println project.version
+    println project.path
+    println project.projectDir
+    println project.buildDir
+    println project.group
+    println project.ant
+    println project.customProperty1
+    println project.property("customProperty1")
+
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
